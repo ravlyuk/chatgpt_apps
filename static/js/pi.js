@@ -7,7 +7,6 @@ function pi() {
     race.classList.add("race");
     raceview.appendChild(race);
 
-
     race.innerHTML = `
         <div class="col-md-6 offset-md-3 col-sm-12">
             <div class="card p-4">
@@ -28,7 +27,6 @@ function pi() {
 
     const result = document.getElementById("result");
 
-
     document.addEventListener('submit', (event) => {
         event.preventDefault();
         const piNumber = event.target.elements.piNumber.value.replace(',', '.');
@@ -44,6 +42,4 @@ function pi() {
             result.classList.remove('text-success');
         }
     })
-
-
 }

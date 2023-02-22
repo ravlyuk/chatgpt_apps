@@ -22,14 +22,12 @@ function calc() {
             </div>
         </div>
     `;
-
-
 }
 
 
 function calculate() {
-    var number = document.getElementById("number").value;
-    var percentage = document.getElementById("percentage").value;
-    var result = ((number / percentage) * 100).toFixed(2);
+    let number = document.getElementById("number").value;
+    let percentage = document.getElementById("percentage").value;
+    let result = ((number / percentage) * 100).toFixed(2);
     document.getElementById("result").innerHTML = "Result: " + result + "%";
 }

@@ -28,24 +28,21 @@ function day() {
                     </div>
                     <button type="submit" class="btn btn-success mt-4">Check Answer</button>
                 </form>
-                <p class="text-center mt-4" id="result"></p>
+                <p class="text-center mt-4 font-weight-bold" id="result"></p>
                 <div class="text-center">   
-                    <button type="button" class="btn-secondary btn-light" onclick="setRandomDate()">Get new date</button>
+                    <button type="button" class="btn-secondary btn-light" onclick="setRandomDate()">New date</button>
                 </div>
             </div>
         </div> 
     `;
 
-    // document.getElementById("date").textContent = getRandomDate().toDateString().split(' ').slice(1).join(' ');
     setRandomDate()
 }
 
 // Get a random date
 function getRandomDate() {
-
-
-    var start = new Date(-11676096000000); // 01/01/1600
-    var end = new Date();
+    let start = new Date(-11676096000000); // 01/01/1600
+    let end = new Date();
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
@@ -57,15 +54,15 @@ function setRandomDate() {
 // Check the selected day against the correct day of the week for the random date
 function checkDay(event) {
     event.preventDefault();
-    var date = new Date(document.getElementById("date").textContent);
-    var day = document.getElementById("day").value;
-    var correctDay = date.toLocaleString('en-US', {weekday: 'long'});
+    let date = new Date(document.getElementById("date").textContent);
+    let day = document.getElementById("day").value;
+    let correctDay = date.toLocaleString('en-US', {weekday: 'long'});
     if (day === correctDay) {
-        document.getElementById("result").textContent = "Correct!";
+        document.getElementById("result").textContent = "Correct";
         document.getElementById("result").classList.remove("text-danger");
         document.getElementById("result").classList.add("text-success");
     } else {
-        document.getElementById("result").textContent = "Wrong day.";
+        document.getElementById("result").textContent = "Wrong";
         document.getElementById("result").classList.remove("text-success");
         document.getElementById("result").classList.add("text-danger");
     }
