@@ -12,7 +12,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm">
-    <a class="navbar-brand" href="/">Hacker Website</a>
+    <a class="navbar-brand" onclick="home()">Yerav scripts</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,12 +31,28 @@
     </div>
 </nav>
 
-<h1 id="title"> Generated scripts with ChatGPT </h1>
+<h2 id="title" class="title"></h2>
 <span id="page-content"></span>
 
 <script src="static/js/pi.js"></script>
 <script src="static/js/day.js"></script>
 <script src="static/js/calc.js"></script>
+
+<script>
+    function home() {
+        const title = document.getElementsByClassName('title')[0];
+        title.innerHTML = `Generated scripts with ChatGPT`;
+        const raceview = document.getElementById('page-content');
+        raceview.innerHTML = `
+        <div class="title">
+            <h4>Minor fixes by: Yevhenii Ravliuk</h4>
+            <a style="font-size:24px" href="http://t.me/yerav" target="_blank" >t.me/yerav</a>
+        </div>
+        `;
+    }
+
+    home()
+</script>
 
 
 </body>
