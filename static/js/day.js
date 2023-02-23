@@ -12,7 +12,7 @@ function day() {
         <div class="container">
             <div class="col-md-6 offset-md-3 col-sm-12">
                 <h2 class="text-center mb-4">What day of the week is this date?</h2>
-                <h1 class="text-center" id="date"></h1>
+                <h2 class="text-center" id="date"></h2>
                 <form class="text-center" onsubmit="return checkDay(event)">
                     <div class="form-group">
                         <label for="day">Select the day of the week:</label>

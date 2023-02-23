@@ -11,11 +11,11 @@ function pi() {
         <div class="col-md-6 offset-md-3 col-sm-12">
             <div class="card p-4">
                 <h1 class="text-center mb-4 pi-title">PI Number Checker</h1>
-                <form>
+                <form autocomplete="off">
                     <div class="form-group">
                         <label class="pi-title" for="piNumber">Enter the first 100 digits of PI:</label>
                         <input type="text" class="form-control form-control-lg" id="piNumber" name="piNumber" size="100"
-                               required>
+                               required oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\\..*?)\\..*/g, '$1');">
                     </div>
                     <button type="submit" class="btn btn-success btn-lg btn-block" >Submit</button>
                 </form>
@@ -43,3 +43,7 @@ function pi() {
         }
     })
 }
+
+document.getElementsByTagName("input").oninput = function (event) {
+    this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*?)\..*/g, '$1');
+};

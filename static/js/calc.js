@@ -12,11 +12,9 @@ function calc() {
     <div class="container">
             <div class="col-md-6 offset-md-3 col-sm-12">
                 <form>
-                    <label>Enter the number 1:</label>
-                    <input type="number" id="number" placeholder="Enter a number...">
-                        <label>Enter the number 2:</label>
-                        <input type="number" id="percentage" placeholder="Enter a percentage...">
-                            <button type="button" class="btn" onclick="calculate()">Calculate</button>
+                    <input type="number" id="number" placeholder="Enter a number 1">
+                    <input type="number" id="percentage" placeholder="Enter a number 2">
+                    <button type="button" class="btn" onclick="calculate()">Calculate</button>
                 </form>
                 <p class="result" id="result"></p>
             </div>
@@ -31,3 +29,7 @@ function calculate() {
     let result = ((number / percentage) * 100).toFixed(2);
     document.getElementById("result").innerHTML = "Result: " + result + "%";
 }
+
+document.getElementsByTagName("input").oninput = function (event) {
+    this.value = this.value.replace(/[^0-9.,]/g, '').replace(/(\..*?)\..*/g, '$1');
+};
