@@ -31,7 +31,9 @@
     </div>
 </nav>
 
-<h2 id="title" class="title"></h2>
+<div class="main-content">
+    <h2 id="title"></h2>
+</div>
 <span id="page-content"></span>
 
 <script src="static/js/pi.js"></script>
@@ -40,11 +42,11 @@
 
 <script>
     function home() {
-        const title = document.getElementsByClassName('title')[0];
+        const title = document.getElementById('title');
         title.innerHTML = `Generated scripts with ChatGPT`;
         const raceview = document.getElementById('page-content');
         raceview.innerHTML = `
-        <div class="title">
+        <div class="main-content">
             <h4>Minor fixes by: Yevhenii Ravliuk</h4>
             <a style="font-size:24px" href="http://t.me/yerav" target="_blank" >t.me/yerav</a>
         </div>
